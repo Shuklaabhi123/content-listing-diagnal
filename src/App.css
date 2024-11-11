@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #171717; /* Background color */
+  color: #ffffff; /* Text color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 equal-width columns */
+  gap: 16px; /* Space between grid items */
+  padding: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%; /* Ensures the grid takes up the full width */
+}
+
+/* Grid Item */
+.grid-item {
+  position: relative;
+  width: 100%; /* Ensures items fill their grid column */
+  height: auto;
+}
+
+.grid-item .thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 150%; /* 2:3 Aspect Ratio (height = 150% of the width) */
+  background-color: #333; /* Fallback color */
+  overflow: hidden;
+}
+
+/* Image Placeholder */
+.grid-item .placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  text-align: center;
+  line-height: 200px;
+  color: #999;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Still show 3 columns on tablets/large screens */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Show 2 columns on medium screens */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Show 1 column on small mobile screens */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-container {
+    padding: 8px; /* Reduced padding on very small screens */
+  }
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Search Bar */
+.search-container {
+  padding: 16px;
+  background-color: #222222; /* Darker background for the search bar */
+  border-bottom: 1px solid #444;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #333; /* Dark background for input */
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.search-container input:focus {
+  outline: none;
+  background-color: #444; /* Lighter background on focus */
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+}
+
+/* Loading Spinner (if needed) */
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #222222;
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 16px;
+  transition: transform 0.3s;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+}
