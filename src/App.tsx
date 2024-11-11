@@ -14,7 +14,6 @@ const fetchData = async (pageNumber: number): Promise<DataItem[]> => {
     const response = await axios.get(
       `${BASE_API_URL}data/page${pageNumber}.json`
     );
-    console.log('rtee', response.data);
     return response.data.page['content-items']['content'];
   } catch (error) {
     console.error('Error fetching data:', error);
