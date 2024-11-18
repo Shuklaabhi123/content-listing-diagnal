@@ -8,8 +8,8 @@ interface GridItemProps {
 const GridItem: React.FC<GridItemProps> = ({ title, imageUrl }) => {
   return (
     <div className="grid-item">
-      <h3>{title}</h3>
       <img id={title} src={imageUrl} alt={title} />
+      <h3>{title}</h3>
     </div>
   );
 };

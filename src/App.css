@@ -66,7 +66,7 @@ body {
 @media screen and (max-width: 900px) {
   .grid-container {
     grid-template-columns: repeat(
-      2,
+      3,
       1fr
     ); /* Show 2 columns on medium screens */
   }
@@ -74,7 +74,10 @@ body {
 
 @media screen and (max-width: 600px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Show 1 column on small mobile screens */
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Show 1 column on small mobile screens */
   }
 }
 
@@ -131,24 +134,34 @@ body {
 .header {
   display: flex;
   align-items: center;
-  padding: 16px;
-  background-color: #222222;
+  justify-content: space-between; /* Spread out the elements */
+  background-color: #000; /* Black background */
+  padding: 10px 20px;
 }
 
-.back-arrow {
+.back-arrow,
+.search-button {
   background: none;
   border: none;
-  color: #ffffff;
   cursor: pointer;
-  margin-right: 16px;
-  transition: transform 0.3s;
 }
 
-.back-arrow:hover {
-  transform: scale(1.1); /* Slight scale effect on hover */
+.back-arrow svg,
+.search-button svg {
+  display: block;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  flex-grow: 1; /* Ensures the title takes up extra space */
+  margin: 0 10px; /* Adds spacing between the buttons */
+}
+
+.back-arrow:hover svg,
+.search-button:hover svg {
+  stroke: #f0f0f0; /* Change arrow and magnifying glass color on hover */
+  fill: #f0f0f0; /* Optional: fill color for the search icon */
 }
